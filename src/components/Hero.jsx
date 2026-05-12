@@ -42,9 +42,13 @@ const Hero = () => {
                         transition={{ delay: 0.4 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight"
                     >
-                        Hey, I'm
-                        <span className="block gradient-text">
-                            Galib Mehboob
+                        <span className="block text-5xl " >Hey, I'm</span>
+                        <span className="block">
+                            <span className="text-zinc-400">G</span>
+                            <span className="gradient-text">alib</span>
+                            {' '}
+                            <span className="text-zinc-400">M</span>
+                            <span className="gradient-text">ehboob</span>
                         </span>
                     </motion.h1>
 

@@ -15,7 +15,7 @@ const Footer = () => {
 
 
                 <div className="text-center md:text-left">
-                    <Link href="/" className="relative">
+                    <Link href="/" className="relative items-center justify-around flex">
                         <Image
                             src="/logo.png"
                             alt="logo"

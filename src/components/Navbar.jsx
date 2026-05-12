@@ -57,7 +57,7 @@ const Navbar = () => {
             transition={{ duration: 0.8 }}
             className="fixed -top-1 left-1/2 -translate-x-1/2 z-50 w-[95%] lg:w-[90%] flex items-center justify-between"
         >
-            {/* Logo */}
+
             <Link
                 href="/"
                 className="relative w-[90px] h-[90px] lg:w-[120px] lg:h-[120px]"
@@ -72,7 +72,7 @@ const Navbar = () => {
                 />
             </Link>
 
-            {/* Desktop Nav */}
+
             <div className="hidden md:flex items-center justify-between lg:px-32 px-6 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/20">
                 <div className="flex items-center gap-10 font-semibold">
                     {navLinks.map((link) => (
@@ -80,8 +80,8 @@ const Navbar = () => {
                             key={link.id}
                             href={link.href}
                             className={`relative transition duration-300 ${activeSection === link.id
-                                    ? "text-white"
-                                    : "text-white/50 hover:text-white"
+                                ? "text-white"
+                                : "text-white/50 hover:text-white"
                                 }`}
                         >
                             {link.name}
@@ -97,9 +97,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Right Buttons */}
+
             <div className="flex items-center gap-4">
-                {/* Theme Toggle */}
+
                 <button
                     onClick={() =>
                         setTheme(theme === "dark" ? "light" : "dark")
@@ -110,7 +110,7 @@ const Navbar = () => {
                         (theme === "dark" ? <FaSun /> : <FaMoon />)}
                 </button>
 
-                {/* Mobile Menu Button */}
+
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
                     className="md:hidden w-11 h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center"
@@ -119,7 +119,7 @@ const Navbar = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
@@ -136,15 +136,15 @@ const Navbar = () => {
                                     href={link.href}
                                     onClick={() => setMenuOpen(false)}
                                     className={`transition duration-300 ${activeSection === link.id
-                                            ? "text-white"
-                                            : "text-white/50 hover:text-white"
+                                        ? "text-white"
+                                        : "text-white/50 hover:text-white"
                                         }`}
                                 >
                                     {link.name}
                                 </Link>
                             ))}
 
-                            {/* Mobile Theme Toggle */}
+
                             <button
                                 onClick={() =>
                                     setTheme(
