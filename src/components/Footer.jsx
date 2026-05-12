@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
@@ -13,9 +14,15 @@ const Footer = () => {
 
                 {/* Brand */}
                 <div className="text-center md:text-left">
-                    <h1 className="text-white text-2xl font-bold tracking-wide">
-                        Galib
-                    </h1>
+                    <Link href="/" className="relative w-[90px] h-[90px] lg:w-[120px] lg:h-[120px]">
+                        <Image
+                            src="/logo.png"
+                            alt="logo"
+                            fill
+                            priority
+                            className="object-contain brightness-0 invert drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+                        />
+                    </Link>
                     <p className="text-sm mt-2 text-gray-500">
                         Building modern web experiences.
                     </p>
