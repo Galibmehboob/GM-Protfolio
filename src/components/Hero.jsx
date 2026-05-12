@@ -81,7 +81,7 @@ const Hero = () => {
                         className="flex gap-5 mt-10"
                     >
                         <a
-                            href="https://github.com/"
+                            href="https://github.com/Galibmehboob"
                             target="_blank"
                             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-purple-600 duration-300"
                         >
@@ -89,7 +89,7 @@ const Hero = () => {
                         </a>
 
                         <a
-                            href="https://linkedin.com/"
+                            href="https://www.linkedin.com/in/galib-mehboob/"
                             target="_blank"
                             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-cyan-600 duration-300"
                         >
@@ -97,7 +97,7 @@ const Hero = () => {
                         </a>
 
                         <a
-                            href="https://facebook.com/"
+                            href="https://www.facebook.com/heygalib.4U/"
                             target="_blank"
                             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-blue-600 duration-300"
                         >

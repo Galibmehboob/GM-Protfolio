@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 
 const Footer = () => {
@@ -38,19 +39,19 @@ const Footer = () => {
 
                 {/* Social Icons */}
                 <div className="flex items-center gap-5 text-xl">
-                    <a href="https://github.com" target="_blank" className="hover:text-white hover:scale-110 transition">
+                    <a href="https://github.com/Galibmehboob" target="_blank" className="hover:text-white hover:scale-110 transition">
                         <FaGithub />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" className="hover:text-blue-400 hover:scale-110 transition">
+                    <a href="https://www.linkedin.com/in/galib-mehboob/" target="_blank" className="hover:text-blue-400 hover:scale-110 transition">
                         <FaLinkedin />
                     </a>
-                    <a href="https://facebook.com" target="_blank" className="hover:text-blue-500 hover:scale-110 transition">
+                    <a href="https://www.facebook.com/heygalib.4U/" target="_blank" className="hover:text-blue-500 hover:scale-110 transition">
                         <FaFacebook />
                     </a>
-                    <a href="https://twitter.com" target="_blank" className="hover:text-sky-400 hover:scale-110 transition">
+                    <a href="https://x.com/GalibMehboob" target="_blank" className="hover:text-sky-400 hover:scale-110 transition">
                         <FaTwitter />
                     </a>
-                    <a href="mailto:yourmail@gmail.com" className="hover:text-red-400 hover:scale-110 transition">
+                    <a href="mailto:galibmehboob@gmail.com" className="hover:text-red-400 hover:scale-110 transition">
                         <FiMail />
                     </a>
                 </div>
