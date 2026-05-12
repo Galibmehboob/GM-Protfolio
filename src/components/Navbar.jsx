@@ -26,9 +26,9 @@ const Navbar = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] lg:w-[90%] flex items-center justify-between"
+            className="fixed -top-1 left-1/2 -translate-x-1/2 z-50 w-[95%] lg:w-[90%] flex items-center justify-between"
         >
-            {/* Logo */}
+
             <Link href="/" className="relative w-[90px] h-[90px] lg:w-[120px] lg:h-[120px]">
                 <Image
                     src="/logo.png"
@@ -39,7 +39,7 @@ const Navbar = () => {
                 />
             </Link>
 
-            {/* Desktop Menu */}
+
             <div className="hidden md:flex items-center justify-between lg:px-32 px-6 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl shadow-black/20">
                 <div className="flex items-center gap-10 font-semibold">
                     <Link href="#about">About</Link>
@@ -49,9 +49,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Right Side */}
+
             <div className="flex items-center gap-4">
-                {/* Desktop Theme Button */}
+
                 <button
                     onClick={() =>
                         setTheme(theme === "dark" ? "light" : "dark")
@@ -71,7 +71,7 @@ const Navbar = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
@@ -110,7 +110,7 @@ const Navbar = () => {
                                 Contact
                             </Link>
 
-                            {/* Mobile Theme Toggle */}
+
                             <button
                                 onClick={() =>
                                     setTheme(
