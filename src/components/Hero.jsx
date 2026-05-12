@@ -3,24 +3,25 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import Link from "next/link";
 
 const Hero = () => {
     return (
         <section className="relative min-h-screen overflow-hidden flex items-center justify-center  px-6">
 
-            {/* Background Blur */}
+
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/20 blur-[120px] rounded-full"></div>
 
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/20 blur-[120px] rounded-full"></div>
 
-            {/* Grid */}
+
             <div className="absolute inset-0 opacity-10">
                 <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
             </div>
 
             <div className="relative z-10 w-11/12 mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-                {/* Left Content */}
+
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -57,7 +58,7 @@ const Hero = () => {
                         using MERN Stack and Next.js with premium UI/UX experiences.
                     </motion.p>
 
-                    {/* Buttons */}
+
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -67,13 +68,17 @@ const Hero = () => {
                         <button className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 font-semibold hover:scale-105 duration-300 shadow-2xl shadow-purple-500/30">
                             Hire Me
                         </button>
+                        <Link
+                            href="/resume.pdf"
+                            download
+                            className="px-8 py-4 rounded-full border border-white/20 backdrop-blur-lg hover:bg-white/10 duration-300"
+                        >
+                            Download Resume
+                        </Link>
 
-                        <button className="px-8 py-4 rounded-full border border-white/20 backdrop-blur-lg hover:bg-white/10 duration-300">
-                            Download CV
-                        </button>
                     </motion.div>
 
-                    {/* Socials */}
+
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -106,7 +111,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Right Image */}
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.7 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -131,6 +136,8 @@ const Hero = () => {
                             alt="profile"
                             width={420}
                             height={420}
+
+                            sizes="(max-width: 768px) 300px, 420px"
                             className="rounded-[40px] border border-white/10 shadow-2xl object-cover"
                         />
                     </motion.div>

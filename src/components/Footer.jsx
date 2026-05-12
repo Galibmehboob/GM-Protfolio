@@ -9,19 +9,21 @@ const Footer = () => {
         <footer className="relative py-14 border-t border-gray-800 bg-black text-gray-400">
 
             {/* glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-transparent opacity-90 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black to-transparent opacity-90 pointer-events-none" />
 
             <div className="relative w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
 
-                {/* Brand */}
+
                 <div className="text-center md:text-left">
-                    <Link href="/" className="relative w-[90px] h-[90px] lg:w-[120px] lg:h-[120px]">
+                    <Link href="/" className="relative">
                         <Image
                             src="/logo.png"
                             alt="logo"
-                            fill
+                            width={120}
+                            height={120}
+                            sizes="120px"
                             priority
-                            className="object-contain brightness-0 invert drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+                            className="object-contain"
                         />
                     </Link>
                     <p className="text-sm mt-2 text-gray-500">
@@ -29,7 +31,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Links */}
+
                 <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
                     <Link href="/" className="hover:text-white transition">Home</Link>
                     <Link href="/about" className="hover:text-white transition">About</Link>
@@ -37,7 +39,7 @@ const Footer = () => {
                     <Link href="/contact" className="hover:text-white transition">Contact</Link>
                 </div>
 
-                {/* Social Icons */}
+
                 <div className="flex items-center gap-5 text-xl">
                     <a href="https://github.com/Galibmehboob" target="_blank" className="hover:text-white hover:scale-110 transition">
                         <FaGithub />
@@ -57,9 +59,9 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* bottom line */}
+
             <div className="relative mt-10 text-center text-xs text-gray-600">
-                © 2026 Galib. All rights reserved.
+                © 2026 GALIB MEHBOOB. All rights reserved.
             </div>
         </footer>
     );
