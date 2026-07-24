@@ -1,3 +1,8 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,17 +15,33 @@ import TechStack from "@/components/TechStack";
 import Education from "@/components/Education";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <SmoothScroll>
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <TechStack />
-      <Education />
-      <Projects />
-      <Contact />
-      <Footer />
-    </SmoothScroll>
+    <>
+      <AnimatePresence>
+        {isLoading && <Loading />}
+      </AnimatePresence>
+
+      <SmoothScroll>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <TechStack />
+        <Education />
+        <Projects />
+        <Contact />
+        <Footer />
+      </SmoothScroll>
+    </>
   );
 }

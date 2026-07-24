@@ -113,7 +113,7 @@ const Hero = () => {
                                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
                                 </span>
                                 <span className="text-xs sm:text-sm font-medium text-zinc-200">
-                                    Available for Internship & Freelance Opportunities
+                                    Available for Remote Full Stack Developer roles.
                                 </span>
                             </div>
                         </motion.div>

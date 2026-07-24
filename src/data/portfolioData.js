@@ -357,7 +357,7 @@ export const projects = [
 ];
 
 export const contactInfo = {
-    availability: "Open to Opportunities", // or "Available for Freelance"
+    availability: "Open to Remote Opportunities", // or "Available for Freelance"
     email: "galibmehboob.com",
     phone: "+880 1604420124",
     whatsapp: "+880 1604420124",
@@ -393,7 +393,7 @@ export const ABOUT_DATA = {
         { label: "Education", value: "BBA major in Marketing" },
         { label: "Experience Level", value: "Junior / Mid-Level" },
         { label: "Languages", value: "English, Bengali" },
-        { label: "Freelance", value: "Available" },
+        { label: "Remote Jobs, Freelance", value: "Available" },
     ],
 
     stats: [
