@@ -1,152 +1,292 @@
 "use client";
 
+import React, { useCallback, useMemo } from "react";
 import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
-import Link from "next/link";
+import { LogoGithub, LogoLinkedin, LogoFacebook, Envelope } from '@gravity-ui/icons';
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
+
+
+// Social Links Configuration
+const SOCIAL_LINKS = [
+    {
+        name: "GitHub",
+        href: "https://github.com/Galibmehboob",
+        icon: LogoGithub,
+    },
+    {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/galib-mehboob/",
+        icon: LogoLinkedin,
+    },
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/heygalib.4U/",
+        icon: LogoFacebook,
+    },
+    {
+        name: "Email",
+        href: "mailto:galibmehboob@gmail.com",
+        icon: Envelope,
+    },
+];
 
 const Hero = () => {
+    // Smooth Scroll Handler to navigate to sections without full page reload
+    const handleScrollTo = useCallback((sectionId) => {
+        const target = document.getElementById(sectionId);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    }, []);
+
+    // Parent Framer Motion Stagger Variants
+    const containerVariants = useMemo(
+        () => ({
+            hidden: { opacity: 0 },
+            visible: {
+                opacity: 1,
+                transition: {
+                    staggerChildren: 0.12,
+                    delayChildren: 0.1,
+                },
+            },
+        }),
+        []
+    );
+
+    // Child Motion Variants for Fade Up
+    const fadeUpVariants = useMemo(
+        () => ({
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                    duration: 0.6,
+                    ease: [0.215, 0.61, 0.355, 1],
+                },
+            },
+        }),
+        []
+    );
+
     return (
-        <section className="relative min-h-screen overflow-hidden flex items-center justify-center  px-6">
+        <section
+            id="home"
+            aria-label="Hero Section"
+            className="relative min-h-screen w-full flex items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden"
+        >
+            {/* ========================================== */}
+            {/* BACKGROUND LAYER: Gradients, Glow & Grid   */}
+            {/* ========================================== */}
+            <div className="absolute inset-0 -z-10 pointer-events-none select-none overflow-hidden">
+                {/* Top-Left Purple Glow Spot */}
+                <div className="absolute -top-20 -left-20 w-[450px] h-[450px] bg-purple-600/20 dark:bg-purple-500/15 blur-[120px] rounded-full" />
 
+                {/* Bottom-Right Cyan Glow Spot */}
+                <div className="absolute top-1/2 -right-20 w-[400px] h-[400px] bg-cyan-500/20 dark:bg-cyan-500/15 blur-[120px] rounded-full" />
 
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/20 blur-[120px] rounded-full"></div>
-
-            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/20 blur-[120px] rounded-full"></div>
-
-
-            <div className="absolute inset-0 opacity-10">
-                <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+                {/* Grid Background Pattern with Center Fade Mask */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 dark:opacity-25" />
             </div>
 
-            <div className="relative z-10 w-11/12 mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            {/* ========================================== */}
+            {/* MAIN CONTENT GRID                         */}
+            {/* ========================================== */}
+            <div className="max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-
-                <motion.div
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-purple-400 uppercase tracking-[5px] mt-28 mb-4"
-                    >
-                        MERN Stack Developer
-                    </motion.p>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight"
-                    >
-                        <span className="block text-5xl " >Hey, I'm</span>
-                        <span className="block">
-                            <span className="text-zinc-400">G</span>
-                            <span className="gradient-text">alib</span>
-                            {' '}
-                            <span className="text-zinc-400">M</span>
-                            <span className="gradient-text">ehboob</span>
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                        className="mt-8 text-gray-300 text-lg leading-9 max-w-xl"
-                    >
-                        I build modern, animated and high-performance web applications
-                        using MERN Stack and Next.js with premium UI/UX experiences.
-                    </motion.p>
-
-
+                    {/* LEFT SIDE: Text Content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="flex flex-wrap gap-5 mt-10"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="lg:col-span-7 flex flex-col items-start gap-5 text-left order-2 lg:order-1"
                     >
-                        <button className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 font-semibold hover:scale-105 duration-300 shadow-2xl shadow-purple-500/30">
-                            Hire Me
-                        </button>
-                        <Link
-                            href="/resume.pdf"
-                            download
-                            className="px-8 py-4 rounded-full border border-white/20 backdrop-blur-lg hover:bg-white/10 duration-300"
-                        >
-                            Download Resume
-                        </Link>
+                        {/* Availability Badge */}
+                        <motion.div variants={fadeUpVariants}>
+                            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-md shadow-sm">
+                                <span className="relative flex h-2.5 w-2.5">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                                </span>
+                                <span className="text-xs sm:text-sm font-medium text-zinc-200">
+                                    Available for Internship & Freelance Opportunities
+                                </span>
+                            </div>
+                        </motion.div>
 
+                        {/* Greeting & Main Name Heading */}
+                        <motion.div variants={fadeUpVariants} className="space-y-1">
+                            <span className="text-lg sm:text-xl font-medium text-zinc-400 tracking-wide">
+                                Hey, I'm
+                            </span>
+                            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
+                                <span className="text-zinc-400">G</span>
+                                <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+                                    alib
+                                </span>{" "}
+                                <span className="text-zinc-400">M</span>
+                                <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+                                    ehboob
+                                </span>
+                            </h1>
+                        </motion.div>
+
+                        {/* Animated Typewriter Subheading */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400 min-h-[38px] flex items-center"
+                        >
+                            <span>I am a </span>
+                            <span className="ml-2 text-purple-300 border-b-2 border-cyan-400/80 pb-0.5">
+                                <Typewriter
+                                    words={[
+                                        "Full Stack Developer",
+                                        "MERN Stack Developer",
+                                        "Next.js Developer",
+                                        "React Developer",
+                                    ]}
+                                    loop={true}
+                                    cursor
+                                    cursorStyle="|"
+                                    typeSpeed={70}
+                                    deleteSpeed={50}
+                                    delaySpeed={1500}
+                                />
+                            </span>
+                        </motion.div>
+
+                        {/* Concise Concise Introduction */}
+                        <motion.p
+                            variants={fadeUpVariants}
+                            className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl font-normal"
+                        >
+                            Building modern, animated, and scalable web applications using the MERN Stack and Next.js, focused on clean architecture and high-performance UI/UX experiences.
+                        </motion.p>
+
+                        {/* Action Buttons */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            className="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto"
+                        >
+                            {/* Primary: Download Resume */}
+                            <a
+                                href="/resume.pdf"
+                                download="Galib_Mehboob_Resume.pdf"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/35 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                            >
+                                <Download className="w-4 h-4" />
+                                <span>Download Resume</span>
+                            </a>
+
+                            {/* Secondary: View Projects */}
+                            <button
+                                type="button"
+                                onClick={() => handleScrollTo("projects")}
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-sm text-zinc-200 border border-white/15 bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+                            >
+                                <span>View Projects</span>
+                                <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </motion.div>
+
+                        {/* Social Links */}
+                        <motion.div
+                            variants={fadeUpVariants}
+                            className="pt-4 flex items-center gap-3"
+                        >
+                            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mr-1">
+                                Connect
+                            </span>
+                            {SOCIAL_LINKS.map((item) => {
+                                const IconComponent = item.icon;
+                                return (
+                                    <a
+                                        key={item.name}
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Visit Galib's ${item.name}`}
+                                        className="p-3 rounded-full border border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-purple-500/50 hover:bg-purple-500/10 backdrop-blur-md transition-all duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                                    >
+                                        <IconComponent className="w-4 h-4" />
+                                    </a>
+                                );
+                            })}
+                        </motion.div>
                     </motion.div>
 
-
+                    {/* RIGHT SIDE: Profile Photo Container */}
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className="flex gap-5 mt-10"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2"
                     >
-                        <a
-                            href="https://github.com/Galibmehboob"
-                            target="_blank"
-                            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-purple-600 duration-300"
+                        {/* Smooth Floating Wrapper */}
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                repeatType: "mirror",
+                                ease: "easeInOut",
+                            }}
+                            className="relative group"
                         >
-                            <FaGithub />
-                        </a>
+                            {/* Outer Glow Halo */}
+                            <div className="absolute -inset-1.5 rounded-[42px] bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 opacity-40 blur-xl group-hover:opacity-65 transition duration-700" />
 
-                        <a
-                            href="https://www.linkedin.com/in/galib-mehboob/"
-                            target="_blank"
-                            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-cyan-600 duration-300"
-                        >
-                            <FaLinkedin />
-                        </a>
-
-                        <a
-                            href="https://www.facebook.com/heygalib.4U/"
-                            target="_blank"
-                            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-blue-600 duration-300"
-                        >
-                            <FaFacebook />
-                        </a>
+                            {/* Gradient Border Frame */}
+                            <div className="relative p-1.5 rounded-[40px] bg-gradient-to-br from-white/20 via-purple-500/20 to-cyan-500/20 border border-white/20 backdrop-blur-xl shadow-2xl">
+                                {/* Profile Image Container */}
+                                <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] rounded-[34px] overflow-hidden bg-zinc-900 border border-white/10">
+                                    <Image
+                                        src="/profile.png"
+                                        alt="Galib Mehboob - Full Stack & MERN Developer"
+                                        fill
+                                        sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 380px"
+                                        priority
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
+                            </div>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
 
-
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.7 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    className="relative lg:top-20 flex justify-center"
-                >
-                    {/* Glow */}
-                    <div className="absolute w-[350px] h-[350px] bg-purple-500/30 rounded-full blur-[100px]"></div>
-
-                    <motion.div
-                        animate={{
-                            y: [0, -20, 0],
-                        }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: 4,
-                        }}
-                        className="relative"
-                    >
-                        <Image
-                            src="/profile.png"
-                            alt="profile"
-                            width={420}
-                            height={420}
-
-                            sizes="(max-width: 768px) 300px, 420px"
-                            className="rounded-[40px] border border-white/10 shadow-2xl object-cover"
-                        />
-                    </motion.div>
-                </motion.div>
+                </div>
             </div>
+
+            {/* Animated Scroll Down Indicator */}
+            <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 cursor-pointer"
+                onClick={() => handleScrollTo("projects")}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && handleScrollTo("projects")}
+                aria-label="Scroll down to projects section"
+            >
+                <span className="text-[10px] font-semibold tracking-widest uppercase text-zinc-500">
+                    Scroll
+                </span>
+                <motion.div
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut",
+                    }}
+                >
+                    <ChevronDown className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

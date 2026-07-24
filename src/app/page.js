@@ -6,6 +6,8 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import TechStack from "@/components/TechStack";
+import Education from "@/components/Education";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <TechStack />
+      <Education />
       <Projects />
       <Contact />
       <Footer />
