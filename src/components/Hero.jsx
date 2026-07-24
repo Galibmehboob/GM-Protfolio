@@ -118,22 +118,51 @@ const Hero = () => {
                             </div>
                         </motion.div>
 
-                        {/* Greeting & Main Name Heading */}
-                        <motion.div variants={fadeUpVariants} className="space-y-1">
-                            <span className="text-lg sm:text-xl font-medium text-zinc-400 tracking-wide">
-                                Hey, I'm
+                        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
+                            <motion.span
+                                animate={{
+                                    textShadow: [
+                                        "0 0 8px rgba(168,85,247,0.5)",
+                                        "0 0 18px rgba(168,85,247,1)",
+                                        "0 0 8px rgba(168,85,247,0.5)",
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className="inline text-zinc-200"
+                            >
+                                G
+                            </motion.span>
+
+                            <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+                                alib
+                            </span>{" "}
+
+                            <motion.span
+                                animate={{
+                                    textShadow: [
+                                        "0 0 8px rgba(168,85,247,0.5)",
+                                        "0 0 18px rgba(168,85,247,1)",
+                                        "0 0 8px rgba(168,85,247,0.5)",
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className="inline text-zinc-200"
+                            >
+                                M
+                            </motion.span>
+
+                            <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+                                ehboob
                             </span>
-                            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
-                                <span className="text-zinc-400">G</span>
-                                <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
-                                    alib
-                                </span>{" "}
-                                <span className="text-zinc-400">M</span>
-                                <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
-                                    ehboob
-                                </span>
-                            </h1>
-                        </motion.div>
+                        </h1>
 
                         {/* Animated Typewriter Subheading */}
                         <motion.div

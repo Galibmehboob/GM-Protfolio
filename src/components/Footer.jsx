@@ -149,7 +149,7 @@ const Footer = () => {
                 <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                     {/* COPYRIGHT */}
                     <p className="text-xs text-zinc-400 tracking-wide">
-                        © {currentYear} <span className="text-zinc-200 font-semibold">GALIB MEHBOOB</span>. All rights reserved.
+                        © {currentYear} <span className="text-zinc-200 font-semibold">GM</span>. All rights reserved.
                     </p>
 
                     {/* BUILT WITH LOVE */}
@@ -162,7 +162,7 @@ const Footer = () => {
                         </span>
                     </p>
 
-                    {/* BACK TO TOP BUTTON */}
+                    {/* BACK TO TOP BUTTON
                     <motion.button
                         onClick={scrollToTop}
                         whileHover={{ y: -2 }}
@@ -171,7 +171,7 @@ const Footer = () => {
                     >
                         <span>Back To Top</span>
                         <ArrowUp className="w-3.5 h-3.5 text-purple-400" />
-                    </motion.button>
+                    </motion.button> */}
                 </div>
             </div>
         </footer>
