@@ -353,6 +353,69 @@ export const projects = [
             "Team workspace with task management, file sharing, and milestone tracking.",
             "Integrated video meeting and scheduling features.",
         ],
+    }, {
+        slug: "skillbridge",
+
+        title: "SkillBridge",
+
+        description:
+            "A modern startup collaboration platform that connects founders with skilled collaborators through opportunities, premium features, and secure role-based management.",
+
+        fullDescription:
+            "SkillBridge is a production-ready full-stack web application built to help startup founders discover talented collaborators and build successful teams. Founders can create startups, publish opportunities, manage applications, and upgrade to premium using Stripe. Collaborators can browse opportunities, apply to startups, and track their applications through a personalized dashboard. The platform focuses on modern UI/UX, secure authentication, scalable architecture, and real-world startup collaboration.",
+
+        image: "/project4.png",
+
+        live: "https://skillbridge-client-six.vercel.app/",
+
+        github: "https://github.com/Galibmehboob/SkillBridge",
+
+        featured: true,
+
+        status: "Completed",
+
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "HeroUI",
+            "Framer Motion",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT Authentication",
+            "TanStack Query",
+            "Stripe"
+        ],
+
+        features: [
+            "Secure Authentication & Role-based Authorization",
+            "Founder Dashboard with Startup Management",
+            "Create & Manage Opportunities",
+            "Collaborator Application System",
+            "Premium Membership with Stripe Payment",
+            "Admin Approval & User Management",
+            "Responsive Dashboard UI",
+            "Modern Animations with Framer Motion"
+        ],
+
+        challenges: [
+            "Designing a scalable role-based architecture for Admin, Founder, and Collaborator.",
+            "Implementing secure JWT authentication with protected dashboard routes.",
+            "Integrating Stripe payment flow for premium subscriptions.",
+            "Managing complex dashboard state using TanStack Query and React Context.",
+            "Building reusable components while maintaining responsive layouts."
+        ],
+
+        futurePlans: [
+            "Real-time messaging between founders and collaborators.",
+            "AI-powered collaborator recommendation system.",
+            "Notification system for applications and startup updates.",
+            "Team collaboration workspace with file sharing.",
+            "Advanced analytics dashboard for founders.",
+            "Resume parsing and smart candidate matching."
+        ],
     },
 ];
 
