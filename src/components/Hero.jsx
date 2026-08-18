@@ -174,7 +174,6 @@ const Hero = () => {
                                 <Typewriter
                                     words={[
                                         "Full Stack Developer",
-                                        "MERN Stack Developer",
                                         "Next.js Developer",
                                         "React Developer",
                                     ]}
@@ -274,7 +273,7 @@ const Hero = () => {
                                 {/* Profile Image Container */}
                                 <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] rounded-[34px] overflow-hidden bg-zinc-900 border border-white/10">
                                     <Image
-                                        src="/profile.png"
+                                        src="/profile1.png"
                                         alt="Galib Mehboob - Full Stack & MERN Developer"
                                         fill
                                         sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 380px"
